@@ -1,0 +1,51 @@
+Important Information:
+Create Database 
+--library_ms
+--Change the source code DBConnection file and replace the jdbc password with ur own system password.
+--open the xampp if u have then open phpmyadmin to connect the mysql database.
+
+
+Click on sql and creates these tables.
+For running the project click on Login page and run the file 
+Admin username = admin
+password = admin
+You can change the username and password if u want to.
+
+create table users(
+    id int primary key not null AUTO_INCREMENT,
+     name varchar(50),
+     password varchar(50),
+     email varchar(100),
+     contact varchar(20));
+insert into users(name,password,email,contact) values('admin','admin','admin@gmail.com','9878787898');
+
+
+
+create table book_details(
+book_id int primary key AUTO_INCREMENT not null,
+book_name varchar(250) not null,
+author varchar(100),
+quantity int);
+
+insert into book_details(BOOK_NAME,AUTHOR,QUANTITY) values('JAVA','SUN SYSTEM',5);
+insert into book_details(BOOK_NAME,AUTHOR,QUANTITY) values('PYTHON','SNAKES UN SYSTEM',4);
+
+
+create table student_details(
+student_id int primary key AUTO_INCREMENT not null,
+name varchar(100),
+course varchar(100),
+branch varchar(100));
+
+insert into student_details(name,course,branch) values('Raj','BSC','IT');
+insert into student_details(name,course,branch) values('Rahul','BSC','PHYSICS');
+
+create table issue_book_details(
+id int primary key not null AUTO_INCREMENT,
+book_id int,
+book_name varchar(150),
+student_id int,
+student_name varchar(50),
+issue_date date,
+due_date date,
+status varchar(20));
